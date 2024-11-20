@@ -48,13 +48,13 @@ public class Molinete2 : MonoBehaviour
     {
         Opendoor();
         Abresonido();
-        StartCoroutine(CloseDoorAfterDelay(5f));  // Tiempo de espera antes de cerrar la puerta
+        StartCoroutine(CloseDoorAfterDelay(5f)); 
     }
 
     private IEnumerator CloseDoorAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         Closedoor();
-        Destroy(gameObject);  // Destruir el objeto después de cerrarlo
+        Destroy(gameObject);  
     }
 }
