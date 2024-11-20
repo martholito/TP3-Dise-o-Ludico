@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5288291395662218560}
   - component: {fileID: 8769190351769217202}
-  - component: {fileID: 4251503523457320008}
   - component: {fileID: 3947168516246318984}
-  m_Layer: 0
+  - component: {fileID: 5490085710943889719}
+  m_Layer: 9
   m_Name: OpenMolinete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5288291395662218560
 Transform:
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4839176530638600381}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071072, z: -0, w: -0.7071064}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.7679968, y: 0.01999998, z: 0.79300016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &8769190351769217202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53,24 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4251503523457320008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4839176530638600381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee3a78b3d59d4ba6bd07d31374ba991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  molinetedoor: {fileID: 0}
-  restaSaldo: 400
-  sonidopuerta: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
-  audioSource: {fileID: 3947168516246318984}
+  m_Size: {x: 0.5835743, y: 1, z: 1}
+  m_Center: {x: 0.20821285, y: 0, z: 0}
 --- !u!82 &3947168516246318984
 AudioSource:
   m_ObjectHideFlags: 0
@@ -83,7 +67,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.263
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -157,7 +141,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -167,3 +151,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5490085710943889719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839176530638600381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c1eb683b46f44a78af7717c21599d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  molinetedoor: {fileID: 0}
+  restaSaldo: 300
+  sonidopuerta: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
+  audioSource: {fileID: 3947168516246318984}
+  initialTemp: 0.5

@@ -8,6 +8,7 @@ public class Molinete : MonoBehaviour
     [SerializeField] private float restaSaldo;
     [SerializeField] private AudioClip sonidopuerta;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float initialTemp;
 
     public void Opendoor()
     {
@@ -35,6 +36,7 @@ public class Molinete : MonoBehaviour
                 mainCharacter.ApoyaSube(restaSaldo * Time.fixedDeltaTime);
                 Opendoor();
                 Abresonido();
+                Destroy(gameObject);
             }
         }
     }
@@ -43,9 +45,18 @@ public class Molinete : MonoBehaviour
         audioSource.PlayOneShot(sonidopuerta);
     }
 
-        // Start is called before the first frame update
-        void Start()
-    {
+    private float currentTime;
 
+    private void Awake()
+    {
+        currentTime = initialTemp;
+    }
+
+    private void Update()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        Closedoor();
     }
 }
