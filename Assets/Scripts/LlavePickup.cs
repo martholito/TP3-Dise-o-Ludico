@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class LlavePickup : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
-    [SerializeField] private Llave llave;
-    private void OnTriggerStay(Collider other)
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private SoundController sonidoLlave;
+
+    [SerializeField] private float pickUpRadius;
+    [SerializeField] private LayerMask collisionLayer;
+    [SerializeField] private MainCharacter player;
+
+    private void Update()
     {
-        var colliderGameObject = other.gameObject;
-        //Necesito chequear la tag/label/etiqueta de el gameobject
+        DestroyKeys();
+    }
 
-        MainCharacter player = colliderGameObject.GetComponent<MainCharacter>();
+    private void DestroyKeys()
+    {
+        Collider[] collisions = UnityEngine.Physics.OverlapSphere(transform.position, pickUpRadius, collisionLayer);
 
-        if (player != null) //Tiene el componente player
+        if (collisions.Length > 0)
         {
-            if (Input.GetKey(KeyCode.F) && llave != null)
+            foreach (Collider coll in collisions)
             {
-                PlayPickupKeys();
-                llave.Disapear();
-                player.cantLlaves += 1;
-                
+                var collidedRigidBody = coll.GetComponent<Rigidbody>();
+                if (Input.GetKeyDown(KeyCode.F) && collidedRigidBody != null)
+                {
+                    sonidoLlave.PlaySound3();
+                    Destroy(gameObject);
+                    player.cantLlaves += 1;
+                }
             }
-            
         }
     }
 
-    private void PlayPickupKeys()
+    private void OnDrawGizmos()
     {
-        audioSource.Play();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
 }

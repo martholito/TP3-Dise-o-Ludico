@@ -8,12 +8,11 @@ using UnityEngine.UI;
 
 public class MainCharacter : MonoBehaviour
 {
+    [SerializeField] private float rotationSpeed = 10f; // Velocidad de rotación
     [SerializeField] private float movementSpeed;
-    [SerializeField] private Linterna linterna;
     [SerializeField] private Vector2 mouseSensitivity;
     [SerializeField] private Transform raycastOrigin;
     [SerializeField] private Transform raycastLanternOrigin;
-
 
     [SerializeField] private float maxHealth;
     [SerializeField] private Rigidbody rb;
@@ -26,9 +25,10 @@ public class MainCharacter : MonoBehaviour
 
     [SerializeField] private float damagePerTick;
 
-    [SerializeField] private Vector3 startingRotation;
+    [SerializeField] private Animator oskar;
 
-    [SerializeField] private Animator characterAnimator;
+    private bool Hactivo;
+    private bool Vactivo;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
@@ -56,7 +56,13 @@ public class MainCharacter : MonoBehaviour
 
     public int cantSube = 0;
     public int cantLlaves = 0;
-    private void Awake()
+
+    private Vector3 movementDir;
+    private Vector3 move = Vector3.zero;
+    private bool isCrouching = false;
+    private bool isAiming = false;
+
+    private void Start()
     {
         health = maxHealth;
 
@@ -65,7 +71,17 @@ public class MainCharacter : MonoBehaviour
         camera = Camera.main;
         permanetLantern = GameObject.FindGameObjectWithTag("Linterna");
 
-        characterAnimator = GetComponent<Animator>();
+        {
+            if (rb == null)
+            {
+                rb = GetComponent<Rigidbody>();
+            }
+
+            if (camera == null)
+            {
+                camera = Camera.main; // Obtiene la cámara principal si no está asignada
+            }
+        }
     }
 
 
@@ -76,118 +92,118 @@ public class MainCharacter : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 movementDir = new Vector2(horizontal, vertical);
+        Vector2 direction = new Vector2(horizontal, vertical);
 
+        // Calcular direcciones relativas a la cámara
+        Vector3 camFlatFwd = Vector3.Scale(camera.transform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 flatRight = Vector3.Scale(camera.transform.right, new Vector3(1, 0, 1)).normalized;
+
+        Vector3 m_CharForward = Vector3.Scale(camFlatFwd, new Vector3(1, 0, 1)).normalized;
+        Vector3 m_CharRight = Vector3.Scale(flatRight, new Vector3(1, 0, 1)).normalized;
+
+        // Movimiento del jugador
+        float w_speed = movementSpeed;
+        move = (vertical * m_CharForward + horizontal * m_CharRight).normalized * w_speed;
+
+        if (Input.GetMouseButton(1)) // Mantener clic izquierdo
+        {
+            // Actualizar blend tree con la dirección de movimiento
+            oskar.SetFloat("VelX", horizontal, 0.1f, Time.deltaTime);
+            oskar.SetFloat("VelY", vertical, 0.1f, Time.deltaTime);
+
+            // Actualizar estado de apuntado
+            if (!isAiming)
+            {
+                isAiming = true;
+                oskar.SetBool("isAiming", isAiming); // Activar Blend Tree de apuntado
+                movementSpeed = 2; // Ajustar velocidad al apuntar
+            }
+
+            // Mirar hacia la dirección del mouse
+            LookAtMouseDirection();
+
+            // Aplicar movimiento
+            rb.MovePosition(rb.position + move * Time.deltaTime);
+        }
+        else
+        {
+            // Detener el estado de apuntado si se soltó el clic
+            if (isAiming)
+            {
+                isAiming = false;
+                oskar.SetBool("isAiming", isAiming); // Volver al Blend Tree normal
+                movementSpeed = 2; // Ajustar velocidad al estado normal
+            }
+
+            // Manejo de agachado
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                isCrouching = !isCrouching; // Cambiar estado de agachado
+                oskar.SetBool("isCrouching", isCrouching); // Activar Blend Tree correspondiente
+                movementSpeed = isCrouching ? 1 : 2; // Ajustar velocidad
+            }
+
+            // Determinar el estado de movimiento
+            if (direction.magnitude <= 0) // Quieto
+            {
+                oskar.SetFloat("movements", 0, 0.1f, Time.deltaTime); // Estado Idle
+            }
+            else if (direction.magnitude > 0 && !isCrouching && Input.GetKey(KeyCode.LeftShift)) // Correr
+            {
+                oskar.SetFloat("movements", 1, 0.1f, Time.deltaTime); // Estado Correr
+                movementSpeed = 4;
+            }
+            else if (direction.magnitude > 0 && isCrouching) // Caminar Agachado
+            {
+                oskar.SetFloat("movements", 0.25f, 0.1f, Time.deltaTime); // Estado Caminar Agachado
+            }
+            else if (direction.magnitude > 0) // Caminar Normal
+            {
+                oskar.SetFloat("movements", 0.5f, 0.1f, Time.deltaTime); // Estado Caminar Normal
+                movementSpeed = 2;
+            }
+
+            // Aplicar movimiento
+            rb.MovePosition(rb.position + move * Time.deltaTime);
+
+
+            // Rotar cuerpo hacia la dirección de movimiento
+            if (move != Vector3.zero)
+            {
+                rb.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(rb.transform.forward, move, rotationSpeed * Time.deltaTime, 0.0f));
+            }
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+            StartJump();
         }
       
-        if (permanetLantern != null)
-        {
-            linternaEncendida = false;
-        }
-        else
-        {
-            FlashLightCreate(); 
-        }
-        
-        if (linternaEncendida)
-        {
-            FlashLightEnemy();
-        }
-
-        MainCharacterMovements();
-
-        movementDir = movementDir.normalized;
-        Move(movementDir);
-
-        LookAtMouseDirection();
-
         barraDeEstres.fillAmount = health / maxHealth;
 
         //Salir();
 
     }
 
-    //Los distintos estados del personaje principal y sus animaciones
-    private void MainCharacterMovements()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            movementSpeed = 4;
-            StartRuning();
-
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            movementSpeed = 2;
-            StartWalking();
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            movementSpeed = 2;
-            StartWalkingBack();
-
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            movementSpeed = 2;
-            StartWalkingLeft();
-
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            movementSpeed = 2;
-            StartWalkingRight();
-
-        }
-        else
-        {
-            Idle();
-        }
-    }
-
     private void LookAtMouseDirection()
     {
-        float horizontal = Input.GetAxis("Mouse X");
-        float vertical = Input.GetAxis("Mouse Y");
+        // Crear un rayo desde la posición del mouse
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero); // Plano en el nivel del suelo
 
-        //Movimiento en eje horizontal del mouse 
-        if (horizontal != 0)
+        if (groundPlane.Raycast(ray, out float rayDistance))
         {
-            transform.Rotate(0, horizontal * mouseSensitivity.x, 0);
-        }
+            // Obtener el punto en el mundo hacia donde apunta el mouse
+            Vector3 pointToLook = ray.GetPoint(rayDistance);
+            Vector3 directionToLook = (pointToLook - rb.position).normalized;
+            directionToLook.y = 0; // Ignorar la componente vertical
 
-        //Porcion de funcion que limita el movimiento en eje Vertical
-        if (vertical != 0)
-        {
-            Vector3 rotation = camera.transform.localEulerAngles;
-            rotation.x = (rotation.x - vertical * mouseSensitivity.y + 360) % 360;
-            if (rotation.x > 80 && rotation.x < 180) { rotation.x = 80; } else
-            if (rotation.x < 280 && rotation.x > 180) { rotation.x = 280; }
-
-            camera.transform.localEulerAngles = rotation;
+            // Orientar al jugador hacia el punto
+            rb.transform.forward = directionToLook;
         }
     }
 
-    private void Move(Vector2 movementDir)
-    {
-        //Vector3 movement = new Vector3(movementDir.x, 0,movementDir.y);
-        //Agarro el vector derecha del jugador y lo multiplico por x
-        Vector3 right = transform.right * movementDir.x;
-        //Agarro el vector adelante del jugador y lo multiplico por y
-        Vector3 forward = transform.forward * movementDir.y;
-        //SUmo ambos vectores
-        Vector3 direction = right + forward;
-
-        transform.position += direction * movementSpeed * Time.deltaTime;
-    }
-
-    private void FixedUpdate()
-    {
-    }
 
     private void Jump()
     {
@@ -199,29 +215,6 @@ public class MainCharacter : MonoBehaviour
         {
             Vector3 direction = Vector3.up; // Lo mismo que escribir new vector3(0,1,0);
             rb.AddForce(direction * jumpForce, ForceMode.Impulse);
-        }
-
-    }
-
-    private void FlashLightCreate()
-    {
-        if (Input.GetMouseButtonDown(0)) // Detecta clic izquierdo
-        {
-            if (!linternaEncendida)
-            {
-                // Enciende la linterna
-                instantiatedLantern = Instantiate(linterna, raycastLanternOrigin.position, raycastLanternOrigin.rotation);
-                instantiatedLantern.transform.SetParent(raycastLanternOrigin);
-                FlashLightEnemy();
-                linternaEncendida = true;
-            }
-            else
-            {
-                // Apaga la linterna si ya est� encendida
-                Destroy(instantiatedLantern.gameObject);
-                instantiatedLantern = null;
-                linternaEncendida = false;
-            }
         }
     }
 
@@ -241,46 +234,15 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-    //Los estados de las distintas animcaciones
-    private void StartWalking()
+
+    //Se realiza animacion de salto
+
+
+    private void StartJump()
     {
-        characterAnimator.SetBool("isWalking", true);
-        characterAnimator.SetBool("isRunning", false);
+        oskar.SetTrigger("Jump");
     }
 
-    private void StartWalkingBack()
-    {
-        characterAnimator.SetBool("isWalkingBack", true);
-    }
-
-    private void StartWalkingRight()
-    {
-        characterAnimator.SetBool("isWalkingRight", true);
-    }
-
-    private void StartWalkingLeft()
-    {
-        characterAnimator.SetBool("isWalkingLeft", true);
-    }
-    private void StartRuning()
-    {
-        characterAnimator.SetBool("isRunning", true);
-
-    }
-
-    private void Idle()
-    {
-        characterAnimator.SetBool("isWalking", false);
-        characterAnimator.SetBool("isRunning", false);
-        characterAnimator.SetBool("isWalkingBack", false);
-        characterAnimator.SetBool("isWalkingRight", false);
-        characterAnimator.SetBool("isWalkingLeft", false);
-    }
-
-    private void StartJumping()
-    {
-        characterAnimator.SetBool("isWalking", true);
-    }
 
     public void Heal(float healAmount)
     {

@@ -4,29 +4,40 @@ using UnityEngine;
 
 public class SubePickup : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
-    [SerializeField] private Sube sube;
-    private void OnTriggerStay(Collider other)
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private SoundController sonidoSube;
+
+    [SerializeField] private float pickUpRadius;
+    [SerializeField] private LayerMask collisionLayer;
+    [SerializeField] private MainCharacter player;
+
+    private void Update()
     {
-        var colliderGameObject = other.gameObject;
-        //Necesito chequear la tag/label/etiqueta de el gameobject
+        DestroySube();
+    }
 
-        MainCharacter player = colliderGameObject.GetComponent<MainCharacter>();
+    private void DestroySube()
+    {
+        Collider[] collisions = UnityEngine.Physics.OverlapSphere(transform.position, pickUpRadius, collisionLayer);
 
-        if (player != null) //Tiene el componente player
+        if (collisions.Length > 0)
         {
-            if (Input.GetKey(KeyCode.F) && sube != null)
+            foreach (Collider coll in collisions)
             {
-                PlayPickupSube();
-                sube.Disapear();
-                player.cantSube += 1;
+                var collidedRigidBody = coll.GetComponent<Rigidbody>();
+                if (Input.GetKeyDown(KeyCode.F) && collidedRigidBody != null)
+                {
+                    sonidoSube.PlaySound4();
+                    Destroy(gameObject);
+                    player.cantSube += 1;
+                }
             }
         }
     }
 
-    private void PlayPickupSube()
+    private void OnDrawGizmos()
     {
-        audioSource.Play();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
 }
