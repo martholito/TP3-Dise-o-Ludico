@@ -179,7 +179,9 @@ public class MainCharacter : MonoBehaviour
             Jump();
             StartJump();
         }
-      
+
+        FlashLightEnemy();
+
         barraDeEstres.fillAmount = health / maxHealth;
 
         //Salir();
