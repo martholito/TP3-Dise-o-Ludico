@@ -62,8 +62,14 @@ public class MainCharacter : MonoBehaviour
     private bool isCrouching = false;
     private bool isAiming = false;
 
+    //Prueba de vida con luz y sombra
+    public float lifeChangeRate = 5f; // Cuánto aumenta o disminuye la vida por segundo
+    private Light currentLight; // Referencia a la luz que afecta al personaje
+    private bool isInLight = false; // Verifica si está en la luz o en la sombra
+
     private void Start()
     {
+        // Inicializa la salud al máximo al inicio del juego
         health = maxHealth;
 
         //Linea que nos ayuda a bloquear el puntero una vez presionado play
@@ -184,9 +190,58 @@ public class MainCharacter : MonoBehaviour
 
         barraDeEstres.fillAmount = health / maxHealth;
 
-        //Salir();
+        //PRUEBA DE LUCES Y SOMBRAS
+
+        // Cambia la salud dependiendo de si está en la luz o en la sombra
+        if (isInLight)
+        {
+            IncreaseHealth(lifeChangeRate * Time.deltaTime);
+        }
+        else
+        {
+            DecreaseHealth(lifeChangeRate * Time.deltaTime);
+        }
+
+        // Limita la salud entre 0 y el máximo
+        health = Mathf.Clamp(health, 0, maxHealth);
+
+        // Si la salud llega a 0, puedes manejar la "muerte" del personaje aquí
+        if (health <= 0)
+        {
+            Debug.Log("El personaje ha muerto.");
+            // Lógica adicional para la muerte (reiniciar nivel, mostrar mensaje, etc.)
+        }
 
     }
+
+    void IncreaseHealth(float amount)
+    {
+        health += amount;
+    }
+
+    void DecreaseHealth(float amount)
+    {
+        health -= amount;
+    }
+    // Detecta si el personaje entra en una zona de luz
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            isInLight = true;
+        }
+    }
+
+    // Detecta si el personaje sale de una zona de luz
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            isInLight = false;
+        }
+    }
+
+    //-------------------------------------
 
     private void LookAtMouseDirection()
     {
