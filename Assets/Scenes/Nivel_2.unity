@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 62100297}
   - component: {fileID: 62100299}
   - component: {fileID: 62100298}
+  - component: {fileID: 62100300}
   m_Layer: 0
   m_Name: Point Light_2
   m_TagString: Untagged
@@ -1004,6 +1005,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &62100300
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62100296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.1400234
+  m_Center: {x: -0.07443623, y: -0.44344437, z: 0.4878577}
 --- !u!4 &84448982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
@@ -11816,6 +11838,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_2
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11869,8 +11896,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1599797512}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &453781682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 453781681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &478385564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 532952f479e1047c6bfbc5d988cf505b,
@@ -14305,6 +14342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_3
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14363,6 +14405,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1962119910}
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1962119911}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
 --- !u!1 &692848929
 GameObject:
@@ -14528,6 +14574,29 @@ MonoBehaviour:
   tiempoEncendido: 0.2
   tiempoApagado: 0.1
   luzEncendida: 1
+--- !u!136 &693075388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693075383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!95 &700066251 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5329146084741027108, guid: 3da539feb7af69a4283c7b1afbc457bd,
@@ -18748,6 +18817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_9
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18806,6 +18880,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1409061267}
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1409061268}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
 --- !u!4 &886786798 stripped
 Transform:
@@ -19377,9 +19455,10 @@ GameObject:
   - component: {fileID: 953545059}
   - component: {fileID: 953545061}
   - component: {fileID: 953545060}
+  - component: {fileID: 953545062}
   m_Layer: 0
   m_Name: Point Light_2
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -19484,6 +19563,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &953545062
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953545058}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.478931
+  m_Center: {x: 0.19115327, y: -1.1001024, z: 0.000000040111164}
 --- !u!64 &956273412
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19812,6 +19912,29 @@ MonoBehaviour:
   tiempoEncendido: 0.45
   tiempoApagado: 0.16
   luzEncendida: 1
+--- !u!136 &1004988134
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004988129}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!1 &1005924994
 GameObject:
   m_ObjectHideFlags: 0
@@ -21258,9 +21381,10 @@ GameObject:
   - component: {fileID: 1091905954}
   - component: {fileID: 1091905956}
   - component: {fileID: 1091905955}
+  - component: {fileID: 1091905957}
   m_Layer: 0
   m_Name: Point Light_1
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -21365,6 +21489,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &1091905957
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091905953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.5113807
+  m_Center: {x: -0.29579782, y: -1.0755601, z: 0}
 --- !u!64 &1098617663
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21628,6 +21773,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_8
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21681,8 +21831,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1394846440}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &1121294827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1121294826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1126961124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
@@ -22721,6 +22881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_4
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22774,8 +22939,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1186174058}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &1186174057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186174056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1186174058
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186174057}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!64 &1188693275
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24447,6 +24645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_10
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24505,6 +24708,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 693075387}
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 693075388}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
 --- !u!4 &1308587844 stripped
 Transform:
@@ -24661,6 +24868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_6
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24719,6 +24931,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1004988133}
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1004988134}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
 --- !u!64 &1316550487
 MeshCollider:
@@ -26603,6 +26819,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1121294826}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1394846440
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121294827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!64 &1395009715
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26785,6 +27024,29 @@ MonoBehaviour:
   tiempoEncendido: 0.2
   tiempoApagado: 0.1
   luzEncendida: 1
+--- !u!136 &1409061268
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409061263}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!4 &1412001002 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7500012403534468683, guid: 3da539feb7af69a4283c7b1afbc457bd,
@@ -28041,6 +28303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_7
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28094,8 +28361,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1602133903}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &1554901679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1554901678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556237927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6126604062982109915, guid: d00264a359aab479c9775f59a1ca0343,
@@ -40051,6 +40328,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 453781681}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1599797512
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453781682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!114 &1600873243 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 373263318372459518, guid: 8a0eaea9849aded49bf328e99f9815a8,
@@ -40096,6 +40396,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1554901678}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1602133903
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554901679}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!4 &1604036764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7500012403534468683, guid: 3da539feb7af69a4283c7b1afbc457bd,
@@ -41396,6 +41719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41449,8 +41777,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1638678122}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &1638678121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638678120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1638678122
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638678121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!1 &1642969275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1888728789097157394, guid: d00264a359aab479c9775f59a1ca0343,
@@ -44598,9 +44959,10 @@ GameObject:
   - component: {fileID: 1819235706}
   - component: {fileID: 1819235708}
   - component: {fileID: 1819235707}
+  - component: {fileID: 1819235709}
   m_Layer: 0
   m_Name: Point Light_2
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -44705,6 +45067,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &1819235709
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819235705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.4789307
+  m_Center: {x: -0.000000004945774, y: -1.4635806, z: 0.023669956}
 --- !u!95 &1828515335 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5329146084741027108, guid: 3da539feb7af69a4283c7b1afbc457bd,
@@ -46221,6 +46604,29 @@ MonoBehaviour:
   tiempoEncendido: 0.5
   tiempoApagado: 0.1
   luzEncendida: 1
+--- !u!136 &1962119911
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962119906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!1 &1970255735
 GameObject:
   m_ObjectHideFlags: 0
@@ -46315,6 +46721,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden_5
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46368,8 +46779,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977739113}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &1977739112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1977739111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1977739113
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977739112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!1 &1978781864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2234717132947156705, guid: 9e8956ce27ca940aca4a9c9645cdb2ff,
@@ -49237,6 +49681,7 @@ GameObject:
   - component: {fileID: 2109200811}
   - component: {fileID: 2109200813}
   - component: {fileID: 2109200812}
+  - component: {fileID: 2109200814}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -49344,6 +49789,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &2109200814
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109200810}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.2757397
+  m_Center: {x: -0.31817555, y: -1.5038476, z: 0.84254265}
 --- !u!4 &2113025104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6546934083399871518, guid: 9a6486eae490040aa85baa3399d484fe,
@@ -50215,6 +50681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luces Anden
       objectReference: {fileID: 0}
+    - target: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 8883342660509971235, guid: 39264ba8719b9486d997b59f13735623,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50268,8 +50739,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7489044531718178181}
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1 &7489044531718178180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971765031735629392, guid: 39264ba8719b9486d997b59f13735623,
+    type: 3}
+  m_PrefabInstance: {fileID: 7489044531718178179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &7489044531718178181
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489044531718178180}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5602727
+  m_Height: 6.7931113
+  m_Direction: 1
+  m_Center: {x: -0.060272694, y: -2.8362834, z: 0}
 --- !u!1001 &8268336024585489605
 PrefabInstance:
   m_ObjectHideFlags: 0
