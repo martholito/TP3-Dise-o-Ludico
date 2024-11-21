@@ -208,8 +208,9 @@ public class MainCharacter : MonoBehaviour
         // Si la salud llega a 0, puedes manejar la "muerte" del personaje aquí
         if (health <= 0)
         {
+            PantallaDerrota();
             Debug.Log("El personaje ha muerto.");
-            // Lógica adicional para la muerte (reiniciar nivel, mostrar mensaje, etc.)
+            
         }
 
     }
@@ -346,13 +347,16 @@ public class MainCharacter : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        PantallaDerrota();
+        
+    }
 
+    private void PantallaDerrota()
+    {
         if (health <= 0)
         {
-            //Die();
             pantallaMenuDerrota.SetActive(true);
             Time.timeScale = 0;
-
         }
     }
 
