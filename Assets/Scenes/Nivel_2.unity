@@ -3387,6 +3387,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2836009138829665261, guid: d00264a359aab479c9775f59a1ca0343, type: 3}
+--- !u!114 &308827270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4614883858425169544, guid: b277eab8106f46647973996e17e595cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 878718357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &314215386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 51db130969f8e4cfdb0d752963a3f583,
@@ -18479,6 +18491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasBarra
       objectReference: {fileID: 0}
+    - target: {fileID: 8057035602547531045, guid: b277eab8106f46647973996e17e595cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8767947715771704868, guid: b277eab8106f46647973996e17e595cd,
         type: 3}
       propertyPath: m_Pivot.x
@@ -24289,7 +24306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: barraDeEstres
       value: 
-      objectReference: {fileID: 1977225159}
+      objectReference: {fileID: 308827270}
     - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
         type: 3}
       propertyPath: enemyCheckDistance
@@ -46285,18 +46302,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1977225159 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4599955316074131785, guid: b277eab8106f46647973996e17e595cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 878718357}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1977739111
 PrefabInstance:
   m_ObjectHideFlags: 0
