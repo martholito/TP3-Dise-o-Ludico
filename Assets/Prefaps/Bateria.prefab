@@ -134,11 +134,11 @@ MonoBehaviour:
   rb: {fileID: 0}
   linternaPlayer: {fileID: 0}
   sonidoBateria: {fileID: 0}
-  pickUpRadius: 0.63
+  pickUpRadius: 0.62
   collisionLayer:
     serializedVersion: 2
     m_Bits: 256
-  carga: 29.8
+  carga: 15
 --- !u!1 &2911383157166758101
 GameObject:
   m_ObjectHideFlags: 0

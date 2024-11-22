@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294001930193914745}
-  - component: {fileID: 4628451698886461025}
+  - component: {fileID: 6855796597972673319}
   m_Layer: 0
   m_Name: LinternaSinLuz
   m_TagString: Untagged
@@ -277,7 +277,7 @@ Transform:
   - {fileID: 641124768768941973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
---- !u!114 &4628451698886461025
+--- !u!114 &6855796597972673319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,8 +292,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   linternaPlayer: {fileID: 0}
   sonidoLinterna: {fileID: 0}
-  pickUpRadius: 0
+  pickUpRadius: 0.62
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   visualPilas: {fileID: 0}
