@@ -286,14 +286,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9213341703495107656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82c82e1bd2891b41b11ddefeb428495, type: 3}
+  m_Script: {fileID: 11500000, guid: fbb2e1c4420ec80439c0c3f578d7275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   linternaPlayer: {fileID: 0}
   sonidoLinterna: {fileID: 0}
-  pickUpRadius: 0.35
+  pickUpRadius: 0
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   visualPilas: {fileID: 0}
