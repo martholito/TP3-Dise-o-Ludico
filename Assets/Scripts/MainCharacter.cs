@@ -79,6 +79,10 @@ public class MainCharacter : MonoBehaviour
         camera = Camera.main;
         permanetLantern = GameObject.FindGameObjectWithTag("Linterna");
 
+        // Asegúrate de que todo esté limpio al comenzar la escena
+        pantallaMenuDerrota.SetActive(false);
+        Time.timeScale = 1f;
+
         {
             if (rb == null)
             {
