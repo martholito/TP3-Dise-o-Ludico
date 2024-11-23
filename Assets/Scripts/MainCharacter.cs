@@ -39,7 +39,6 @@ public class MainCharacter : MonoBehaviour
     //Barra de vida
     [SerializeField] private Image barraDeEstres;
 
-    private Linterna instantiatedLantern; // Variable para almacenar la linterna instanciada
     private bool linternaEncendida = false; // Estado de la linterna (encendida/apagada)
 
     private EnemyBehaviour targetEnemy;
