@@ -11,29 +11,44 @@ public class PickUpBatery : MonoBehaviour
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask collisionLayer;
     [SerializeField] private float carga;
- 
+    [SerializeField] private GameObject pressF;
+
+    private bool isInRange = false; // Controla si el jugador está en el rango de interacción.
+
     private void Update()
     {
-        DestroyLantern();
+        CheckLanternProximity();
+        if (isInRange && Input.GetKeyDown(KeyCode.F))
+        {
+            PickUpLantern();
+        }
     }
 
-    private void DestroyLantern()
+    private void CheckLanternProximity()
     {
         Collider[] collisions = UnityEngine.Physics.OverlapSphere(transform.position, pickUpRadius, collisionLayer);
 
         if (collisions.Length > 0)
         {
-            foreach (Collider coll in collisions)
+            if (!isInRange)
             {
-                var collidedRigidBody = coll.GetComponent<Rigidbody>();
-                if (Input.GetKeyDown(KeyCode.F) && collidedRigidBody != null)
-                {
-                    linternaPlayer.GetComponent<Linterna>().cantBateria += carga;
-                    sonidoBateria.PlaySound2();
-                    Destroy(gameObject);
-                }
+                isInRange = true; // Marca que el jugador está en el rango.
+                pressF.SetActive(true); // Muestra "Press F".
             }
         }
+        else if (isInRange)
+        {
+            isInRange = false; // Marca que el jugador salió del rango.
+            pressF.SetActive(false); // Oculta "Press F".
+        }
+    }
+
+    private void PickUpLantern()
+    {
+        linternaPlayer.GetComponent<Linterna>().cantBateria += carga; // Incrementa la batería.
+        sonidoBateria.PlaySound2(); // Reproduce el sonido.
+        pressF.SetActive(false); // Oculta "Press F".
+        Destroy(gameObject); // Destruye la linterna.
     }
 
     private void OnDrawGizmos()
@@ -41,11 +56,4 @@ public class PickUpBatery : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
 }

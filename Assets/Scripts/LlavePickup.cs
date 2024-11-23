@@ -10,29 +10,44 @@ public class LlavePickup : MonoBehaviour
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask collisionLayer;
     [SerializeField] private MainCharacter player;
+    [SerializeField] private GameObject pressF;
+    private bool isInRange = false;
 
     private void Update()
     {
-        DestroyKeys();
+        CheckLanternProximity();
+        if (isInRange && Input.GetKeyDown(KeyCode.F))
+        {
+            DestroyKeys();
+        }
+        
     }
 
-    private void DestroyKeys()
+    private void CheckLanternProximity()
     {
         Collider[] collisions = UnityEngine.Physics.OverlapSphere(transform.position, pickUpRadius, collisionLayer);
 
         if (collisions.Length > 0)
         {
-            foreach (Collider coll in collisions)
+            if (!isInRange)
             {
-                var collidedRigidBody = coll.GetComponent<Rigidbody>();
-                if (Input.GetKeyDown(KeyCode.F) && collidedRigidBody != null)
-                {
-                    sonidoLlave.PlaySound3();
-                    Destroy(gameObject);
-                    player.cantLlaves += 1;
-                }
+                isInRange = true; // Marca que el jugador está en el rango.
+                pressF.SetActive(true); // Muestra "Press F".
             }
         }
+        else if (isInRange)
+        {
+            isInRange = false; // Marca que el jugador salió del rango.
+            pressF.SetActive(false); // Oculta "Press F".
+        }
+    }
+    private void DestroyKeys()
+    {
+        pressF.SetActive(false);
+        sonidoLlave.PlaySound3();
+        player.cantLlaves += 1;
+        Destroy(gameObject);
+        
     }
 
     private void OnDrawGizmos()

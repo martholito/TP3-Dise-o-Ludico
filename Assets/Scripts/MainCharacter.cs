@@ -10,6 +10,9 @@ public class MainCharacter : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 10f; // Velocidad de rotación
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float CrouchingSpeed;
     [SerializeField] private Vector2 mouseSensitivity;
     [SerializeField] private Transform raycastOrigin;
     [SerializeField] private Transform raycastLanternOrigin;
@@ -145,7 +148,7 @@ public class MainCharacter : MonoBehaviour
             {
                 isCrouching = !isCrouching; // Cambiar estado de agachado
                 oskar.SetBool("isCrouching", isCrouching); // Activar Blend Tree correspondiente
-                movementSpeed = isCrouching ? 1 : 2; // Ajustar velocidad
+                movementSpeed = isCrouching ? CrouchingSpeed : walkSpeed; // Ajustar velocidad
             }
 
             // Determinar el estado de movimiento
@@ -156,7 +159,7 @@ public class MainCharacter : MonoBehaviour
             else if (direction.magnitude > 0 && !isCrouching && Input.GetKey(KeyCode.LeftShift)) // Correr
             {
                 oskar.SetFloat("movements", 1, 0.1f, Time.deltaTime); // Estado Correr
-                movementSpeed = 4;
+                movementSpeed = runSpeed;
             }
             else if (direction.magnitude > 0 && isCrouching) // Caminar Agachado
             {
@@ -165,7 +168,7 @@ public class MainCharacter : MonoBehaviour
             else if (direction.magnitude > 0) // Caminar Normal
             {
                 oskar.SetFloat("movements", 0.5f, 0.1f, Time.deltaTime); // Estado Caminar Normal
-                movementSpeed = 2;
+                movementSpeed = walkSpeed;
             }
 
             // Aplicar movimiento

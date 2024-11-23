@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 964619341841618984}
-  - component: {fileID: 2376927690389235154}
+  - component: {fileID: -3433961563402156113}
   m_Layer: 0
   m_Name: Bateria
   m_TagString: Untagged
@@ -119,7 +119,7 @@ Transform:
   - {fileID: 2657667406528112751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2376927690389235154
+--- !u!114 &-3433961563402156113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +134,12 @@ MonoBehaviour:
   rb: {fileID: 0}
   linternaPlayer: {fileID: 0}
   sonidoBateria: {fileID: 0}
-  pickUpRadius: 0.62
+  pickUpRadius: 0.35
   collisionLayer:
     serializedVersion: 2
     m_Bits: 256
-  carga: 15
+  carga: 30
+  pressF: {fileID: 0}
 --- !u!1 &2911383157166758101
 GameObject:
   m_ObjectHideFlags: 0
