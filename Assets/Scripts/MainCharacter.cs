@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -33,8 +34,6 @@ public class MainCharacter : MonoBehaviour
     private bool Hactivo;
     private bool Vactivo;
 
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
 
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
@@ -366,6 +365,7 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
+    
     /*
     private void Die()
     {
