@@ -23,6 +23,11 @@ public class Linterna : MonoBehaviour
 
     private bool activelight;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
 
     private void Update()
     {
