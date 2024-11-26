@@ -1214,7 +1214,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -1941,7 +1941,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -3061,7 +3061,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -4253,18 +4253,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2878376812654935729, guid: 2cda4f84912f04a9f8e14231bf660569, type: 3}
---- !u!114 &333161415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
-    type: 3}
-  m_PrefabInstance: {fileID: 1294698196}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88db52723be6eed459ac90cd4116bcc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &337271070
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4469,7 +4457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -10786,7 +10774,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -11254,7 +11242,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -12677,7 +12665,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -13274,12 +13262,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.127, y: 0.000000017269391, z: 0.0763327}
   m_Center: {x: -0.020515209, y: -0.000013447036, z: 0.038166348}
---- !u!4 &615727923 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3427842005628994612, guid: bf332ea30e85fce4cb87c09fc4939b73,
-    type: 3}
-  m_PrefabInstance: {fileID: 1294698196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &620908801
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13939,7 +13921,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -14963,7 +14945,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -15583,7 +15565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -16504,7 +16486,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -16990,7 +16972,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -17307,7 +17289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2636ce09743b40b59e59a0bc2cdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 615727923}
+  follow: {fileID: 0}
   maxDistance: 2
   sensitivity: {x: 1, y: 1}
   angle: {x: 1.5707964, y: 0}
@@ -17625,7 +17607,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -18279,7 +18261,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -20856,7 +20838,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -22077,7 +22059,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -22616,7 +22598,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -23412,7 +23394,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -25235,7 +25217,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -25983,7 +25965,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -27378,7 +27360,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -38594,7 +38576,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -39310,7 +39292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -41166,7 +41148,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -42582,7 +42564,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -43685,7 +43667,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -44221,7 +44203,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -48837,18 +48819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067306201}
   m_CullTransparentMesh: 1
---- !u!114 &2071352258 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9026342681175173247, guid: 8a0eaea9849aded49bf328e99f9815a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1098834134}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2087858344
 GameObject:
   m_ObjectHideFlags: 0
@@ -49486,7 +49456,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 4524059629909908619, guid: 3da539feb7af69a4283c7b1afbc457bd,
         type: 3}
       propertyPath: startingtState
@@ -50526,7 +50496,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 333161415}
+      objectReference: {fileID: 0}
     - target: {fileID: 1107366487732783577, guid: 4fece1e306cea3d44a1f9acfe55b729d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50945,3 +50915,4 @@ SceneRoots:
   - {fileID: 854913336}
   - {fileID: 3559988823845434333}
   - {fileID: 1098834134}
+  - {fileID: 304604400}

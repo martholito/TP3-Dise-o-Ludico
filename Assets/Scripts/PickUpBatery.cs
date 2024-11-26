@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickUpBatery : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private GameObject linternaPlayer;
-    [SerializeField] private SoundController sonidoBateria;
+    [SerializeField] private static Rigidbody rb;
+    [SerializeField] private static GameObject linternaPlayer;
+    [SerializeField] private static SoundController sonidoBateria;
 
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask collisionLayer;
     [SerializeField] private float carga;
-    [SerializeField] private GameObject pressF;
+    [SerializeField] private static GameObject pressF;
 
     private bool isInRange = false; // Controla si el jugador está en el rango de interacción.
 

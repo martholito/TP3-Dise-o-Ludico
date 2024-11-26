@@ -93,6 +93,7 @@ public class MainCharacter : MonoBehaviour
                 camera = Camera.main; // Obtiene la cámara principal si no está asignada
             }
         }
+        DontDestroyOnLoad(this);
     }
 
 
