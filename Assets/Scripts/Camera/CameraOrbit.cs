@@ -9,7 +9,7 @@ public class CameraOrbit : MonoBehaviour
     [SerializeField] private float maxDistance;
     [SerializeField] private Vector2 sensitivity;
 
-    [SerializeField]private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);
+    [SerializeField] private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);
     private new Camera camera;
     private Vector2 nearPlaneSize;
 
