@@ -20,8 +20,6 @@ public class CameraOrbit : MonoBehaviour
         camera = GetComponent<Camera>();
 
         CalculateNearPlaneSize();
-
-        DontDestroyOnLoad(this);
     }
 
     private void CalculateNearPlaneSize()
