@@ -293,7 +293,7 @@ public class MainCharacter : MonoBehaviour
             if (enemy != null)
             {
                 // Resta vida al enemigo 
-                enemy.TakeDamage(damagePerTick * Time.deltaTime);
+                enemy.TakeDamage(damagePerTick * Time.fixedDeltaTime);
             }
         }
     }

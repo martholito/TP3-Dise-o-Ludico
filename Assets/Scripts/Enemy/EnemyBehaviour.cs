@@ -147,7 +147,7 @@ public class EnemyBehaviour : MonoBehaviour
             //Es un player
             Debug.Log("Choco contra el player");
             Atacking();
-            player.TakeDamage(damage);
+            player.TakeDamage(damage * Time.fixedDeltaTime);
         }
     }
 }

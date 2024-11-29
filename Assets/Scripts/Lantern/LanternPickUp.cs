@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class L : MonoBehaviour
+public class LanternPickUp : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject linternaPlayer;

@@ -25,7 +25,6 @@ public class Linterna : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this);
     }
 
 

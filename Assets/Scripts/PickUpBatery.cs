@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickUpBatery : MonoBehaviour
 {
-    [SerializeField] private static Rigidbody rb;
-    [SerializeField] private static GameObject linternaPlayer;
-    [SerializeField] private static SoundController sonidoBateria;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private GameObject linternaPlayer;
+    [SerializeField] private SoundController sonidoBateria;
 
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask collisionLayer;
     [SerializeField] private float carga;
-    [SerializeField] private static GameObject pressF;
+    [SerializeField] private GameObject pressF;
 
     private bool isInRange = false; // Controla si el jugador está en el rango de interacción.
 
@@ -20,7 +20,7 @@ public class PickUpBatery : MonoBehaviour
         CheckLanternProximity();
         if (isInRange && Input.GetKeyDown(KeyCode.F))
         {
-            PickUpLantern();
+            BateryPickUp();
         }
     }
 
@@ -43,7 +43,7 @@ public class PickUpBatery : MonoBehaviour
         }
     }
 
-    private void PickUpLantern()
+    private void BateryPickUp()
     {
         linternaPlayer.GetComponent<Linterna>().cantBateria += carga; // Incrementa la batería.
         sonidoBateria.PlaySound2(); // Reproduce el sonido.

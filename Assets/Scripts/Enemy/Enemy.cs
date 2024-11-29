@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage * Time.fixedDeltaTime;
+        health -= damage;
 
         //if (health <= 30)
         //{
