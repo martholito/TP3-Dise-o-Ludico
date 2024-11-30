@@ -9,6 +9,7 @@ TagManager:
   - punto
   - Linterna
   - Light
+  - CierreM
   layers:
   - Default
   - TransparentFX

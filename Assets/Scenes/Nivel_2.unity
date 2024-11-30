@@ -9388,6 +9388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4043537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.26
       objectReference: {fileID: 0}
@@ -9399,7 +9404,7 @@ PrefabInstance:
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
@@ -9438,9 +9443,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: sonidoAbrir
+      value: 
+      objectReference: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: molinetedoor
       value: 
       objectReference: {fileID: 1019257327}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
+      propertyPath: sonidoCerrar
+      value: 
+      objectReference: {fileID: 8300000, guid: 92abbb57d957642569056598fa42aefd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36132,6 +36147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.337607
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.77
       objectReference: {fileID: 0}
@@ -36143,7 +36163,7 @@ PrefabInstance:
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.12
+      value: -0.17849
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
@@ -36182,9 +36202,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: sonidoAbrir
+      value: 
+      objectReference: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: molinetedoor
       value: 
       objectReference: {fileID: 1556941523}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
+      propertyPath: sonidoCerrar
+      value: 
+      objectReference: {fileID: 8300000, guid: 92abbb57d957642569056598fa42aefd, type: 3}
     - target: {fileID: 8769190351769217202, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
       propertyPath: m_Size.x
@@ -37648,6 +37678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.337607
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.753
       objectReference: {fileID: 0}
@@ -37659,7 +37694,7 @@ PrefabInstance:
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.122
+      value: -0.18117
       objectReference: {fileID: 0}
     - target: {fileID: 5288291395662218560, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
@@ -37698,9 +37733,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
+      propertyPath: sonidoAbrir
+      value: 
+      objectReference: {fileID: 8300000, guid: 11ad73bf4e0ad4f56b3232d69819f591, type: 3}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
       propertyPath: molinetedoor
       value: 
       objectReference: {fileID: 1960611420}
+    - target: {fileID: 5490085710943889719, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
+        type: 3}
+      propertyPath: sonidoCerrar
+      value: 
+      objectReference: {fileID: 8300000, guid: 92abbb57d957642569056598fa42aefd, type: 3}
     - target: {fileID: 8769190351769217202, guid: 7d39f8bcd37e943fba8ecdceeb6f5b2b,
         type: 3}
       propertyPath: m_Size.x
@@ -37947,7 +37992,6 @@ SceneRoots:
   - {fileID: 1254455084}
   - {fileID: 877761442}
   - {fileID: 450361812}
-  - {fileID: 1294698196}
   - {fileID: 49346539}
   - {fileID: 1108131452}
   - {fileID: 2100695595}
@@ -37957,6 +38001,7 @@ SceneRoots:
   - {fileID: 1929376740}
   - {fileID: 1349151178}
   - {fileID: 854913336}
+  - {fileID: 1294698196}
   - {fileID: 3559988823845434333}
   - {fileID: 1098834134}
   - {fileID: 414742553}
