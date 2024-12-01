@@ -181,6 +181,37 @@ Transform:
   - {fileID: 6960210795832241064}
   m_Father: {fileID: 641124768768941973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5090956592078713651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5950264307185431218}
+  m_Layer: 0
+  m_Name: TriggerLinterna
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5950264307185431218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090956592078713651}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0050985045, y: -0.8659705, z: 0.0047703995, w: 0.5000464}
+  m_LocalPosition: {x: -0.11117223, y: 0.0040283203, z: -0.40021992}
+  m_LocalScale: {x: 1, y: 0.96663, z: 1.7302}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6294001930193914745}
+  m_LocalEulerAnglesHint: {x: 0.766, y: -119.994, z: -0.233}
 --- !u!1 &8239998939841201566
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294001930193914745}
-  - component: {fileID: 6855796597972673319}
+  - component: {fileID: 7086698768520955125}
   m_Layer: 0
   m_Name: LinternaSinLuz
   m_TagString: Untagged
@@ -275,9 +306,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 641124768768941973}
+  - {fileID: 5950264307185431218}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
---- !u!114 &6855796597972673319
+--- !u!114 &7086698768520955125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,14 +318,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 9213341703495107656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb2e1c4420ec80439c0c3f578d7275a, type: 3}
+  m_Script: {fileID: 11500000, guid: dae7212dd13430541be6739c00002b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   linternaPlayer: {fileID: 0}
   sonidoLinterna: {fileID: 0}
-  pickUpRadius: 0.62
+  pickUpRadius: 0.99
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64
   visualPilas: {fileID: 0}
+  pressF: {fileID: 0}

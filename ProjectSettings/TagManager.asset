@@ -10,6 +10,11 @@ TagManager:
   - Linterna
   - Light
   - CierreM
+  - AbreM
+  - Batery
+  - Sube
+  - Llaves
+  - LinternaSinLuz
   layers:
   - Default
   - TransparentFX
@@ -22,7 +27,7 @@ TagManager:
   - MainCharacter
   - Molinetes
   - Techo
-  - 
+  - GrabItem
   - 
   - 
   - 

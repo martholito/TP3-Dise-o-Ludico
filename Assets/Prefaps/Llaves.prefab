@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1121099532626299113}
-  - component: {fileID: 3303118749113021972}
+  - component: {fileID: 1755992777402680726}
   m_Layer: 0
   m_Name: Llaves
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 857598929104607466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3303118749113021972
+--- !u!114 &1755992777402680726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,12 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48fbb7d3a9003d4ba44b5eb23538ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   sonidoLlave: {fileID: 0}
-  pickUpRadius: 0.41
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 256
   player: {fileID: 0}
 --- !u!1001 &895218879145737985
 PrefabInstance:

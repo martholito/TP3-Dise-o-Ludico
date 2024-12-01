@@ -3389,6 +3389,11 @@ PrefabInstance:
       propertyPath: linternaEnMano
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 625377203276948422, guid: bf332ea30e85fce4cb87c09fc4939b73,
+        type: 3}
+      propertyPath: raycastLanternOrigin
+      value: 
+      objectReference: {fileID: 1237745043}
     - target: {fileID: 784514446412685944, guid: bf332ea30e85fce4cb87c09fc4939b73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3464,6 +3469,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf332ea30e85fce4cb87c09fc4939b73, type: 3}
+--- !u!4 &1237745043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1177446063967287314, guid: bf332ea30e85fce4cb87c09fc4939b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237745042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270656257
 GameObject:
   m_ObjectHideFlags: 0

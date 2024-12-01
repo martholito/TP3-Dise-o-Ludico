@@ -6,68 +6,57 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{   
+{
     public static GameManager instance;
-    //public static GameManager GetGameManager
-    //{
-    //    get { return instance;  }
-    //}
 
-    //private static GameManager instance;
-
-    [SerializeField] private float health;
-    [SerializeField] private int nextLevelPoints = 200;
-    private int level;
-    private int currentPoints;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float currentBatery;
 
 
-    //Quiero un evento para enterarme CUANDO en el juego cambiamos de nivel, y a que nivel cambiamos
+    //Quiero un evento que me indique cuando el jugador pierde vida
 
-    // delegate void Delegate(int sadasdn string dsfads, double sfdasdf);
-    // Action<int, string, double> Delegate
-    // delegate int LevelDelegate();
-    // private Func<int, int, float> LevelDelegate; El ultimo parametro del Func es lo que devuelve
-    public event Action<int> OnLevelChanged;
 
+    public float GetCurrentBatery()
+    {
+        return currentBatery;
+    }
+
+    public void SetCurrentBatery(float cantidad)
+    {
+        currentBatery = cantidad;
+    }
 
     public float GetCurrentHealth()
     {
-        return health;
+        return currentHealth;
     }
 
-    public int GetCurrentPoints()
+    public void SetCurrentHealth(float cantidad)
     {
-        return currentPoints;
+        currentHealth = cantidad;
     }
 
-    public void AddPoints(int points)
+    //Metodos de linterna
+    public void BateryLoss(float cantidad)
     {
-        currentPoints += points;
-        if (currentPoints >= nextLevelPoints)
-        {
-            level++;
-            currentPoints = 0;
-            //La firma de un metodo es: que devuelve(void, int float) y que recibe(parametros: enteros, float etc)
-            //Levanto el evento de que acabamos de cambiar de nivel
-            if (OnLevelChanged != null)
-            {
-                OnLevelChanged.Invoke(level);
-            }
-
-            //Cargo la escena del siguiente nivel
-            //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-            AsyncOperation operation = SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
-            // operation.progress //entre 0 y 0.9
-            //operation.completed
-        }
-
+        currentBatery -= cantidad * Time.deltaTime; ;
     }
 
-    public void SetPoints(int points)
+    public void AddCharge(float cantidad)
     {
-        currentPoints = points;
+        currentBatery += cantidad;
     }
 
+    //Metodos de vida
+    public void IncreaseHealth(float amount)
+    {
+        currentHealth += amount;
+    }
+
+    public void DecreaseHealth(float amount)
+    {
+        currentHealth -= amount;
+    }
     private void Awake()
     {
         //Si el game manager ya existe?? Entonces no tengo razon de ser, me destruyo.
@@ -81,5 +70,11 @@ public class GameManager : MonoBehaviour
 
         //Decirle a Unity, que NO quiero que este objeto se destruya al cambiar de escena!!
         DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        currentBatery = 100;
+        currentHealth = 100;
     }
 }
