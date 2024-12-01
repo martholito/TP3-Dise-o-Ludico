@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LlavePickup : MonoBehaviour
+public class LanternPickUp : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private SoundController sonidoLlave;
+    [SerializeField] private GameObject linternaPlayer;
+    [SerializeField] private SoundController sonidoLinterna;
 
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask collisionLayer;
-    [SerializeField] private MainCharacter player;
+    public GameObject visualPilas;
+
     [SerializeField] private GameObject pressF;
-    private bool isInRange = false;
+
+    private bool isInRange = false; // Controla si el jugador está en el rango de interacción.
 
     private void Update()
     {
         CheckLanternProximity();
         if (isInRange && Input.GetKeyDown(KeyCode.F))
         {
-            DestroyKeys();
+            PickUpLantern();
         }
         
     }
@@ -41,13 +44,15 @@ public class LlavePickup : MonoBehaviour
             pressF.SetActive(false); // Oculta "Press F".
         }
     }
-    private void DestroyKeys()
-    {
+
+    private void PickUpLantern()
+    {  
+        sonidoLinterna.PlaySound1();
+        linternaPlayer.SetActive(true);
+        visualPilas.SetActive(true);
+        linternaPlayer.GetComponent<Linterna>().linternaEnMano = true;
         pressF.SetActive(false);
-        sonidoLlave.PlaySound3();
-        player.cantLlaves += 1;
         Destroy(gameObject);
-        
     }
 
     private void OnDrawGizmos()

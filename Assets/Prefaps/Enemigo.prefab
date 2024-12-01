@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6e7c45689451149833472f22c666f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  health: 0
 --- !u!114 &4524059629909908619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   startingtState: 5
   player: {fileID: 0}
   movementSpeed: 3
-  pursuitThreshold: 3
+  pursuitThreshold: 11
   rotationSpeed: 3
   characterAnimator: {fileID: 5329146084741027108}
   damage: 1

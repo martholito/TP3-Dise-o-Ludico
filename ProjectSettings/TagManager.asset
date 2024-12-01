@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - punto
   - Linterna
+  - Light
+  - CierreM
   layers:
   - Default
   - TransparentFX

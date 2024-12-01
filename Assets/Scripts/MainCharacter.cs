@@ -5,11 +5,15 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class MainCharacter : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 10f; // Velocidad de rotación
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float CrouchingSpeed;
     [SerializeField] private Vector2 mouseSensitivity;
     [SerializeField] private Transform raycastOrigin;
     [SerializeField] private Transform raycastLanternOrigin;
@@ -30,8 +34,6 @@ public class MainCharacter : MonoBehaviour
     private bool Hactivo;
     private bool Vactivo;
 
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
 
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
@@ -39,7 +41,6 @@ public class MainCharacter : MonoBehaviour
     //Barra de vida
     [SerializeField] private Image barraDeEstres;
 
-    private Linterna instantiatedLantern; // Variable para almacenar la linterna instanciada
     private bool linternaEncendida = false; // Estado de la linterna (encendida/apagada)
 
     private EnemyBehaviour targetEnemy;
@@ -62,14 +63,24 @@ public class MainCharacter : MonoBehaviour
     private bool isCrouching = false;
     private bool isAiming = false;
 
+    //Prueba de vida con luz y sombra
+    public float lifeChangeRate = 5f; // Cuánto aumenta o disminuye la vida por segundo
+    private Light currentLight; // Referencia a la luz que afecta al personaje
+    private bool isInLight = false; // Verifica si está en la luz o en la sombra
+
     private void Start()
     {
+        // Inicializa la salud al máximo al inicio del juego
         health = maxHealth;
 
         //Linea que nos ayuda a bloquear el puntero una vez presionado play
         Cursor.lockState = CursorLockMode.Locked;
         camera = Camera.main;
         permanetLantern = GameObject.FindGameObjectWithTag("Linterna");
+
+        // Asegúrate de que todo esté limpio al comenzar la escena
+        pantallaMenuDerrota.SetActive(false);
+        Time.timeScale = 1f;
 
         {
             if (rb == null)
@@ -82,6 +93,7 @@ public class MainCharacter : MonoBehaviour
                 camera = Camera.main; // Obtiene la cámara principal si no está asignada
             }
         }
+        rb.freezeRotation = true; // Desactiva rotaciones automáticas
     }
 
 
@@ -140,7 +152,7 @@ public class MainCharacter : MonoBehaviour
             {
                 isCrouching = !isCrouching; // Cambiar estado de agachado
                 oskar.SetBool("isCrouching", isCrouching); // Activar Blend Tree correspondiente
-                movementSpeed = isCrouching ? 1 : 2; // Ajustar velocidad
+                movementSpeed = isCrouching ? CrouchingSpeed : walkSpeed; // Ajustar velocidad
             }
 
             // Determinar el estado de movimiento
@@ -151,7 +163,7 @@ public class MainCharacter : MonoBehaviour
             else if (direction.magnitude > 0 && !isCrouching && Input.GetKey(KeyCode.LeftShift)) // Correr
             {
                 oskar.SetFloat("movements", 1, 0.1f, Time.deltaTime); // Estado Correr
-                movementSpeed = 4;
+                movementSpeed = runSpeed;
             }
             else if (direction.magnitude > 0 && isCrouching) // Caminar Agachado
             {
@@ -160,7 +172,7 @@ public class MainCharacter : MonoBehaviour
             else if (direction.magnitude > 0) // Caminar Normal
             {
                 oskar.SetFloat("movements", 0.5f, 0.1f, Time.deltaTime); // Estado Caminar Normal
-                movementSpeed = 2;
+                movementSpeed = walkSpeed;
             }
 
             // Aplicar movimiento
@@ -179,12 +191,64 @@ public class MainCharacter : MonoBehaviour
             Jump();
             StartJump();
         }
-      
+
+        FlashLightEnemy();
+
         barraDeEstres.fillAmount = health / maxHealth;
 
-        //Salir();
+        //PRUEBA DE LUCES Y SOMBRAS
+
+        // Cambia la salud dependiendo de si está en la luz o en la sombra
+        if (isInLight)
+        {
+            IncreaseHealth(lifeChangeRate * Time.deltaTime);
+        }
+        else
+        {
+            DecreaseHealth(lifeChangeRate * Time.deltaTime);
+        }
+
+        // Limita la salud entre 0 y el máximo
+        health = Mathf.Clamp(health, 0, maxHealth);
+
+        // Si la salud llega a 0, puedes manejar la "muerte" del personaje aquí
+        if (health <= 0)
+        {
+            PantallaDerrota();
+            Debug.Log("El personaje ha muerto.");
+            
+        }
 
     }
+
+    void IncreaseHealth(float amount)
+    {
+        health += amount;
+    }
+
+    void DecreaseHealth(float amount)
+    {
+        health -= amount;
+    }
+    // Detecta si el personaje entra en una zona de luz
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            isInLight = true;
+        }
+    }
+
+    // Detecta si el personaje sale de una zona de luz
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Light"))
+        {
+            isInLight = false;
+        }
+    }
+
+    //-------------------------------------
 
     private void LookAtMouseDirection()
     {
@@ -229,7 +293,7 @@ public class MainCharacter : MonoBehaviour
             if (enemy != null)
             {
                 // Resta vida al enemigo 
-                enemy.TakeDamage(damagePerTick * Time.deltaTime);
+                enemy.TakeDamage(damagePerTick * Time.fixedDeltaTime);
             }
         }
     }
@@ -289,16 +353,20 @@ public class MainCharacter : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        PantallaDerrota();
+        
+    }
 
+    private void PantallaDerrota()
+    {
         if (health <= 0)
         {
-            //Die();
             pantallaMenuDerrota.SetActive(true);
             Time.timeScale = 0;
-
         }
     }
 
+    
     /*
     private void Die()
     {

@@ -19,10 +19,16 @@ public class MenuDerrota : MonoBehaviour
     }
 
 
-    //Para reiniciar el nivel
-    public void ReiniciarElNivel(int nro)
+    public void ReiniciarElNivel()
     {
-        SceneManager.LoadScene(nro);
+        Time.timeScale = 1f; // Restaura el tiempo antes de recargar la escena.
+
+        // Reinicia manualmente los estados si es necesario.
+        pantallaMenuDerrota.SetActive(false);
+
+        // Carga la escena actual.
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void MenuInicial(int nro)

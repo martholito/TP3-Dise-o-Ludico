@@ -47,10 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   sonidoSube: {fileID: 0}
-  pickUpRadius: 0.55
+  pickUpRadius: 0.63
   collisionLayer:
     serializedVersion: 2
     m_Bits: 256
+  player: {fileID: 0}
 --- !u!1001 &8343115770570343940
 PrefabInstance:
   m_ObjectHideFlags: 0
