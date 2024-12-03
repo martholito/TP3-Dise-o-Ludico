@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Unity.VisualScripting.Member;
+using static UnityEditor.ShaderData;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -16,18 +18,17 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] private float CrouchingSpeed;
     [SerializeField] private Vector2 mouseSensitivity;
     [SerializeField] private Transform raycastOrigin;
-    [SerializeField] private Transform raycastLanternOrigin;
+    [SerializeField] private float pickUpRadius;
+    [SerializeField] private LayerMask pickUpCollisionLayer;
+    [SerializeField] private GameObject pressFIndicator;
 
-    [SerializeField] private float maxHealth;
+
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float health;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCheckDistance;
-    [SerializeField] private float enemyCheckDistance;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask enemyLayer;
 
-    [SerializeField] private float damagePerTick;
+
 
     [SerializeField] private Animator oskar;
 
@@ -37,11 +38,15 @@ public class MainCharacter : MonoBehaviour
 
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
+    [SerializeField] private GameObject pantallaMenuPausa;
+
+    [SerializeField] private LanternPickUp lanternPickUp;
+    [SerializeField] private PickUpBatery bateryPickUp;
+    [SerializeField] private LlavePickup pickUpkeys;
+    [SerializeField] private SubePickup pickUpSube;
 
     //Barra de vida
     [SerializeField] private Image barraDeEstres;
-
-    private bool linternaEncendida = false; // Estado de la linterna (encendida/apagada)
 
     private EnemyBehaviour targetEnemy;
     private Enemy enemy;
@@ -53,10 +58,9 @@ public class MainCharacter : MonoBehaviour
 
     private MenuInicial menu;
 
-    private GameObject permanetLantern;
-
     public int cantSube = 0;
     public int cantLlaves = 0;
+    public int cantLinterna = 0;
 
     private Vector3 movementDir;
     private Vector3 move = Vector3.zero;
@@ -67,16 +71,25 @@ public class MainCharacter : MonoBehaviour
     public float lifeChangeRate = 5f; // Cuánto aumenta o disminuye la vida por segundo
     private Light currentLight; // Referencia a la luz que afecta al personaje
     private bool isInLight = false; // Verifica si está en la luz o en la sombra
+    private bool isInRange = false; // Indica si el jugador está en rango de interacción
+    private string currentTag; // Almacena el tag del objeto actual en rango
+
+
+    private float maxHealth = 100;
+    private float health;
 
     private void Start()
     {
+
         // Inicializa la salud al máximo al inicio del juego
-        health = maxHealth;
+
 
         //Linea que nos ayuda a bloquear el puntero una vez presionado play
+        // Oculta el cursor al iniciar el juego
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         camera = Camera.main;
-        permanetLantern = GameObject.FindGameObjectWithTag("Linterna");
 
         // Asegúrate de que todo esté limpio al comenzar la escena
         pantallaMenuDerrota.SetActive(false);
@@ -96,9 +109,10 @@ public class MainCharacter : MonoBehaviour
         rb.freezeRotation = true; // Desactiva rotaciones automáticas
     }
 
-
     private void Update()
     {
+        health = GameManager.instance.GetCurrentHealth();
+
         //Mover utilizando WASD
 
         float horizontal = Input.GetAxis("Horizontal");
@@ -192,10 +206,6 @@ public class MainCharacter : MonoBehaviour
             StartJump();
         }
 
-        FlashLightEnemy();
-
-        barraDeEstres.fillAmount = health / maxHealth;
-
         //PRUEBA DE LUCES Y SOMBRAS
 
         // Cambia la salud dependiendo de si está en la luz o en la sombra
@@ -216,19 +226,38 @@ public class MainCharacter : MonoBehaviour
         {
             PantallaDerrota();
             Debug.Log("El personaje ha muerto.");
-            
+
         }
 
+        // Detectar objetos interactuables en cada frame
+        CheckProximity();
+
+        // Verificar si el jugador presiona "F" mientras está en rango
+        if (isInRange && Input.GetKeyDown(KeyCode.F))
+        {
+            InteractWithObject();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pantallaMenuPausa.SetActive(true);
+
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;  
+        }
     }
 
     void IncreaseHealth(float amount)
     {
-        health += amount;
+        barraDeEstres.fillAmount = health / maxHealth;
+        GameManager.instance.IncreaseHealth(amount);
     }
 
     void DecreaseHealth(float amount)
     {
-        health -= amount;
+        barraDeEstres.fillAmount = health / maxHealth;
+        GameManager.instance.DecreaseHealth(amount);
     }
     // Detecta si el personaje entra en una zona de luz
     private void OnTriggerEnter(Collider other)
@@ -268,7 +297,6 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-
     private void Jump()
     {
         //No puede saltar si el piso esta muy lejos
@@ -282,26 +310,65 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-    
-    private void FlashLightEnemy()
+    // Detecta si un objeto está en rango
+    private void CheckProximity()
     {
-        // Realiza el Raycast cada frame mientras la linterna esta encendida
-        if (Physics.Raycast(raycastLanternOrigin.position, raycastLanternOrigin.forward, out RaycastHit hit, enemyCheckDistance, enemyLayer))
+        Collider[] collisions = Physics.OverlapSphere(transform.position, pickUpRadius, pickUpCollisionLayer);
+
+        if (collisions.Length > 0)
         {
-            // Checkea si el objeto con el que choca el rayo tiene el componente Enemy
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
-            if (enemy != null)
+            if (!isInRange)
             {
-                // Resta vida al enemigo 
-                enemy.TakeDamage(damagePerTick * Time.fixedDeltaTime);
+                isInRange = true;
+                pressFIndicator.SetActive(true); // Muestra "Press F"
+            }
+
+            // Detectar el tag del primer objeto en rango
+            currentTag = collisions[0].tag;
+        }
+        else
+        {
+            if (isInRange)
+            {
+                isInRange = false;
+                pressFIndicator.SetActive(false); // Oculta "Press F"
+                currentTag = null; // Limpia el tag actual
             }
         }
     }
 
+    // Maneja la interacción con el objeto detectado
+    private void InteractWithObject()
+    {
+        if (string.IsNullOrEmpty(currentTag)) return;
+
+        switch (currentTag)
+        {
+            case "LinternaSinLuz":
+                Debug.Log("El jugador recoge una linterna sin luz.");
+                // Acciones específicas para "LinternaSinLuz"
+                lanternPickUp.PickUpLantern();
+                break;
+
+            case "Sube":
+                Debug.Log("El jugador interactúa con un objeto que lo sube.");
+                // Acciones específicas para "Sube"
+                pickUpSube.PickUpSube();
+                break;
+
+            case "Llaves":
+                Debug.Log("El jugador recoge unas llaves.");
+                // Acciones específicas para "Llaves"
+                pickUpkeys.pickUpKeys();
+                break;
+
+            default:
+                Debug.Log("Tag no reconocido: " + currentTag);
+                break;
+        }
+    }
 
     //Se realiza animacion de salto
-
-
     private void StartJump()
     {
         oskar.SetTrigger("Jump");
@@ -312,17 +379,8 @@ public class MainCharacter : MonoBehaviour
     {
         if (health < 100)
         {
-            health += healAmount;
+            GameManager.instance.IncreaseHealth(healAmount);
         }
-    }
-
-    //Funcion para visualizar el raycast de salto y el de deteccion de enmigos
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(raycastOrigin.position, raycastOrigin.position + Vector3.down * jumpCheckDistance);
-
-        Gizmos.DrawLine(raycastLanternOrigin.position, raycastLanternOrigin.position + transform.forward * enemyCheckDistance);
     }
 
 
@@ -352,9 +410,9 @@ public class MainCharacter : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        GameManager.instance.DecreaseHealth(damage);
         PantallaDerrota();
-        
+
     }
 
     private void PantallaDerrota()
@@ -366,11 +424,12 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-    
-    /*
-    private void Die()
+    //Funcion para visualizar el raycast de salto y el de deteccion de enmigos
+    private void OnDrawGizmos()
     {
-        Destroy(gameObject);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(raycastOrigin.position, raycastOrigin.position + Vector3.down * jumpCheckDistance);
+        Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
-    */
+
 }

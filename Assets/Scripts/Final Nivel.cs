@@ -22,6 +22,6 @@ public class FinalNivel : MonoBehaviour
 
     public void PasarNivel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MenuInicio");
     }
 }

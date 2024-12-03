@@ -13,7 +13,7 @@ public class PickUpBatery : MonoBehaviour
     [SerializeField] private float carga;
     [SerializeField] private GameObject pressF;
 
-    private bool isInRange = false; // Controla si el jugador está en el rango de interacción.
+    private bool isInRange = false; // Controla si el jugador esta en el rango de interaccion.
 
     private void Update()
     {
@@ -23,7 +23,7 @@ public class PickUpBatery : MonoBehaviour
             BateryPickUp();
         }
     }
-
+      
     private void CheckLanternProximity()
     {
         Collider[] collisions = UnityEngine.Physics.OverlapSphere(transform.position, pickUpRadius, collisionLayer);
@@ -32,20 +32,20 @@ public class PickUpBatery : MonoBehaviour
         {
             if (!isInRange)
             {
-                isInRange = true; // Marca que el jugador está en el rango.
+                isInRange = true; // Marca que el jugador esta en el rango.
                 pressF.SetActive(true); // Muestra "Press F".
             }
         }
         else if (isInRange)
         {
-            isInRange = false; // Marca que el jugador salió del rango.
+            isInRange = false; // Marca que el jugador salio del rango.
             pressF.SetActive(false); // Oculta "Press F".
         }
     }
 
     private void BateryPickUp()
     {
-        linternaPlayer.GetComponent<Linterna>().cantBateria += carga; // Incrementa la batería.
+        GameManager.instance.AddCharge(carga);
         sonidoBateria.PlaySound2(); // Reproduce el sonido.
         pressF.SetActive(false); // Oculta "Press F".
         Destroy(gameObject); // Destruye la linterna.

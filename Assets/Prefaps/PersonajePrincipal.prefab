@@ -1791,27 +1791,30 @@ MonoBehaviour:
   CrouchingSpeed: 2
   mouseSensitivity: {x: 1, y: 1}
   raycastOrigin: {fileID: 4991318157820558484}
-  raycastLanternOrigin: {fileID: 1177446063967287314}
-  maxHealth: 1000
+  pickUpRadius: 1.22
+  pickUpCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  pressFIndicator: {fileID: 0}
   rb: {fileID: 551956280508006750}
-  health: 0
   jumpForce: 5
   jumpCheckDistance: 0.3
-  enemyCheckDistance: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damagePerTick: 100
   oskar: {fileID: 5811683494650433834}
   pantallaMenuDerrota: {fileID: 0}
+  pantallaMenuPausa: {fileID: 0}
+  lanternPickUp: {fileID: 0}
+  bateryPickUp: {fileID: 0}
+  pickUpkeys: {fileID: 0}
+  pickUpSube: {fileID: 0}
   barraDeEstres: {fileID: 0}
   saldoSube: 0
   cantSube: 0
   cantLlaves: 0
-  lifeChangeRate: 5
+  cantLinterna: 0
+  lifeChangeRate: 0
 --- !u!81 &6777009116819976708
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3655,9 +3658,29 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5009840109145176884, guid: c30fc07713330614b8e55eca8d9a9606,
         type: 3}
+      propertyPath: damagePerTick
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009840109145176884, guid: c30fc07713330614b8e55eca8d9a9606,
+        type: 3}
       propertyPath: perdidaBateria
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5009840109145176884, guid: c30fc07713330614b8e55eca8d9a9606,
+        type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009840109145176884, guid: c30fc07713330614b8e55eca8d9a9606,
+        type: 3}
+      propertyPath: enemyCheckDistance
+      value: 5.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009840109145176884, guid: c30fc07713330614b8e55eca8d9a9606,
+        type: 3}
+      propertyPath: raycastLanternOrigin
+      value: 
+      objectReference: {fileID: 1177446063967287314}
     - target: {fileID: 6369255792637824901, guid: c30fc07713330614b8e55eca8d9a9606,
         type: 3}
       propertyPath: m_Range

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270715109540360467}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9997799, z: -0, w: -0.020980567}
+  m_LocalRotation: {x: 0, y: 0.99978, z: -0, w: -0.02097722}
   m_LocalPosition: {x: -33.114, y: 1.689, z: -47.643}
   m_LocalScale: {x: -0.41947138, y: 2.6605852, z: 0.7701}
   m_ConstrainProportionsScale: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6e7c45689451149833472f22c666f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  health: 0
 --- !u!114 &373770540585488114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingtState: 0
-  player: {fileID: 0}
+  player: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73, type: 3}
   movementSpeed: 3
   pursuitThreshold: 3
   rotationSpeed: 3
