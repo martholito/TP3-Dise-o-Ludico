@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSound: {fileID: 1757634187192605801}
-  levantarLinterna: {fileID: 8300000, guid: 658321025505c9f44acb4de9a2f26a97, type: 3}
+  levantarLinterna: {fileID: 8300000, guid: 930305a62bee89541b75a76779a2adfc, type: 3}
   levantarBateria: {fileID: 8300000, guid: 658321025505c9f44acb4de9a2f26a97, type: 3}
   tomarLlaves: {fileID: 8300000, guid: 656bf4655dad4464683e66306dad8b9d, type: 3}
   tomarSube: {fileID: 8300000, guid: 930305a62bee89541b75a76779a2adfc, type: 3}
