@@ -1543,6 +1543,129 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39264ba8719b9486d997b59f13735623, type: 3}
+--- !u!1001 &207150804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808254979375940082, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427731690344794333, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: lifeBar
+      value: 
+      objectReference: {fileID: 450361814}
+    - target: {fileID: 8845100960961692345, guid: dbabf0979dfedda48b8aa81c508b719f,
+        type: 3}
+      propertyPath: m_Name
+      value: CanvasObjetivos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbabf0979dfedda48b8aa81c508b719f, type: 3}
 --- !u!65 &214429254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9213,8 +9336,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2767278631398157238, guid: b277eab8106f46647973996e17e595cd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 450361814}
   m_SourcePrefab: {fileID: 100100000, guid: b277eab8106f46647973996e17e595cd, type: 3}
+--- !u!1 &450361813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2767278631398157238, guid: b277eab8106f46647973996e17e595cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 450361812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &450361814
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450361813}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &453781681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37992,6 +38137,7 @@ SceneRoots:
   - {fileID: 1254455084}
   - {fileID: 877761442}
   - {fileID: 450361812}
+  - {fileID: 207150804}
   - {fileID: 49346539}
   - {fileID: 1108131452}
   - {fileID: 2100695595}
