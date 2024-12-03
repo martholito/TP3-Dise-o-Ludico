@@ -33,6 +33,9 @@ public class MenuDerrota : MonoBehaviour
         // Obtener y recargar la escena actual
         string currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log($"Recargando la escena: {currentSceneName}");
+        
+        GameManager.instance.SetCurrentHealth(100);
+        GameManager.instance.SetCurrentBatery(100);
         SceneManager.LoadScene(currentSceneName);
     }
 

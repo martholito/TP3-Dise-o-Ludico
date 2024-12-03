@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static Unity.VisualScripting.Member;
+using static UnityEditor.ShaderData;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class MainCharacter : MonoBehaviour
 
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
+    [SerializeField] private GameObject pantallaMenuPausa;
+    public bool pausa = false;
 
     [SerializeField] private LanternPickUp lanternPickUp;
     [SerializeField] private PickUpBatery bateryPickUp;
@@ -228,6 +231,35 @@ public class MainCharacter : MonoBehaviour
         if (isInRange && Input.GetKeyDown(KeyCode.F))
         {
             InteractWithObject();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            
+            
+            if (pausa == false)
+            {
+                pantallaMenuPausa.SetActive(true);
+                pausa = true;
+
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                if (pausa == true)
+                {
+                    pantallaMenuPausa.SetActive(false);
+                    Debug.Log("Continuando juego desde el boton");
+                    pausa = false;
+
+                    Time.timeScale = 1;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            }
+            
         }
 
     }
