@@ -3,6 +3,7 @@ using UnityEditor;
 #endif
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEditor.ShaderData;
@@ -11,7 +12,7 @@ public class MenuPausa : MonoBehaviour
 {
     [SerializeField] private Button continueButton, restartButton, mainMenuButton, quitButton;
     public GameObject ObjetoMenuPausa;
-    public bool pausa = false;
+    public bool pausa;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,8 @@ public class MenuPausa : MonoBehaviour
         quitButton.onClick.AddListener(OnQuitButtonPressed);
     }
 
-    
     // Update is called once per frame
-    private void OnContinueButtonPressed()
+    public void OnContinueButtonPressed()
     {
         Debug.Log("Continuando juego desde el boton");
         ObjetoMenuPausa.SetActive(false);
@@ -32,10 +32,21 @@ public class MenuPausa : MonoBehaviour
 
         Time.timeScale = 1;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.lockState = CursorLockMode.Locked;
+        ResetEventSystem();
     }
 
-    private void OnRestartButtonPressed()
+    private void ResetEventSystem()
+    {
+        EventSystem eventSystem = EventSystem.current;
+        if (eventSystem != null)
+        {
+            // Borra cualquier selección previa
+            eventSystem.SetSelectedGameObject(null); 
+        }
+    }
+
+    public void OnRestartButtonPressed()
     {
         Debug.Log("Restart");
 

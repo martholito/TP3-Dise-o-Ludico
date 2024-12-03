@@ -8,9 +8,10 @@ public class LanternPickUp : MonoBehaviour
     [SerializeField] private GameObject linternaPlayer;
     [SerializeField] private SoundController sonidoLinterna;
     [SerializeField] private GameObject visualPilas;
-
+    [SerializeField] private MainCharacter player;
     public void PickUpLantern()
     {
+        player.cantLinterna += 1;
         sonidoLinterna.PlaySound1();
         linternaPlayer.SetActive(true);
         visualPilas.SetActive(true);

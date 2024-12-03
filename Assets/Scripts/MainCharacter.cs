@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Unity.VisualScripting.Member;
 using static UnityEditor.ShaderData;
@@ -38,7 +39,6 @@ public class MainCharacter : MonoBehaviour
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
     [SerializeField] private GameObject pantallaMenuPausa;
-    public bool pausa = false;
 
     [SerializeField] private LanternPickUp lanternPickUp;
     [SerializeField] private PickUpBatery bateryPickUp;
@@ -60,6 +60,7 @@ public class MainCharacter : MonoBehaviour
 
     public int cantSube = 0;
     public int cantLlaves = 0;
+    public int cantLinterna = 0;
 
     private Vector3 movementDir;
     private Vector3 move = Vector3.zero;
@@ -76,6 +77,7 @@ public class MainCharacter : MonoBehaviour
 
     private float maxHealth = 100;
     private float health;
+
     private void Start()
     {
 
@@ -83,7 +85,10 @@ public class MainCharacter : MonoBehaviour
 
 
         //Linea que nos ayuda a bloquear el puntero una vez presionado play
+        // Oculta el cursor al iniciar el juego
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         camera = Camera.main;
 
         // Asegúrate de que todo esté limpio al comenzar la escena
@@ -235,33 +240,12 @@ public class MainCharacter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
-            
-            if (pausa == false)
-            {
-                pantallaMenuPausa.SetActive(true);
-                pausa = true;
+            pantallaMenuPausa.SetActive(true);
 
-                Time.timeScale = 0;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-            else
-            {
-                if (pausa == true)
-                {
-                    pantallaMenuPausa.SetActive(false);
-                    Debug.Log("Continuando juego desde el boton");
-                    pausa = false;
-
-                    Time.timeScale = 1;
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
-            }
-            
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;  
         }
-
     }
 
     void IncreaseHealth(float amount)

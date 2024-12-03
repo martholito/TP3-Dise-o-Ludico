@@ -17,7 +17,7 @@ public class PasarNivel1 : MonoBehaviour
         MainCharacter player = target.GetComponent<MainCharacter>();
         if (player != null)
         {
-            if (Input.GetKey(KeyCode.F) && player.cantSube >= 1 && player.cantLlaves >= 1)
+            if (Input.GetKey(KeyCode.F) && player.cantSube >= 1 && player.cantLlaves >= 1 && player.cantLinterna >= 1)
             {
                 PasarNivelSubte();
             }
