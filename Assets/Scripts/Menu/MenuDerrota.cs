@@ -4,28 +4,24 @@ using UnityEditor;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuDerrota : MonoBehaviour
 {
     [SerializeField] private GameObject pantallaMenuDerrota;
+    [SerializeField] private Button restartButton, mainMenuButton, quitButton;
 
-    private void Update()
+    void Start()
     {
-        // Verifica si el menú de derrota está activo y ajusta el estado del tiempo y el cursor
-        if (pantallaMenuDerrota.activeSelf)
-        {
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        restartButton.onClick.AddListener(OnRestartButtonPressed);
+        mainMenuButton.onClick.AddListener(OnMainMenuButtonPressed);
+        quitButton.onClick.AddListener(OnQuitButtonPressed);
     }
 
-    public void ReiniciarElNivel()
+    public void OnRestartButtonPressed()
     {
         // Restaurar el tiempo y recargar la escena actual
         Time.timeScale = 1f;
-        //GameManager.instance.SetCurrentHealth(100);
-        //GameManager.instance.SetCurrentBatery(100);
 
         // Asegúrate de ocultar el menú de derrota antes de recargar
         pantallaMenuDerrota.SetActive(false);
@@ -33,20 +29,28 @@ public class MenuDerrota : MonoBehaviour
         // Obtener y recargar la escena actual
         string currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log($"Recargando la escena: {currentSceneName}");
-        
+
         GameManager.instance.SetCurrentHealth(100);
         GameManager.instance.SetCurrentBatery(100);
         SceneManager.LoadScene(currentSceneName);
     }
 
-    public void MenuInicial(int nro)
+    public void OnMainMenuButtonPressed()
     {
-        // Restaurar el tiempo y cargar el menú principal
+        // Restaurar el tiempo y recargar la escena actual
         Time.timeScale = 1f;
-        SceneManager.LoadScene(nro);
+
+        pantallaMenuDerrota.SetActive(false);
+        // Restaurar el tiempo y cargar el menú principal
+        Debug.Log("MainMenu");
+
+        GameManager.instance.SetCurrentHealth(100);
+        GameManager.instance.SetCurrentBatery(100);
+        SceneManager.LoadScene("MenuInicio");
+
     }
 
-    public void Salir()
+    public void OnQuitButtonPressed()
     {
         Debug.Log("Saliendo del juego...");
         Application.Quit();

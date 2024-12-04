@@ -727,10 +727,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21979293043121442, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148494082856286619, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148494082856286619, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148494082856286619, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148494082856286619, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7981732348746996550, guid: 7e7202db860693d428ef4bda439392c6,
         type: 3}
       propertyPath: m_Name
       value: 'CanvasObjetivos '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100009036038725838, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100009036038725838, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100009036038725838, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100009036038725838, guid: 7e7202db860693d428ef4bda439392c6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8149298261672794027, guid: 7e7202db860693d428ef4bda439392c6,
         type: 3}
@@ -35275,7 +35335,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 062c31fdd36852447ac1fe3f5762601c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.152
+  m_Volume: 0.143
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -41357,11 +41417,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2201913463577088845, guid: 822c32ab96ce39044bc5b7cafa28e999,
-        type: 3}
-      propertyPath: levantarLinterna
-      value: 
-      objectReference: {fileID: 8300000, guid: 930305a62bee89541b75a76779a2adfc, type: 3}
     - target: {fileID: 3101951157537274687, guid: 822c32ab96ce39044bc5b7cafa28e999,
         type: 3}
       propertyPath: m_Name
@@ -43598,11 +43653,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPressF
       objectReference: {fileID: 0}
-    - target: {fileID: 2500728651298616603, guid: 367d26d9cb8029c44b731eb266b9b269,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6056665242070631036, guid: 367d26d9cb8029c44b731eb266b9b269,
         type: 3}
       propertyPath: m_Pivot.x
@@ -43702,11 +43752,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9219102194659610135, guid: 367d26d9cb8029c44b731eb266b9b269,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

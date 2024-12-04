@@ -39,7 +39,6 @@ public class MainCharacter : MonoBehaviour
     //Patalla de derrota, victoria y pausa
     [SerializeField] private GameObject pantallaMenuDerrota;
     [SerializeField] private GameObject pantallaMenuPausa;
-    [SerializeField] private DisplayTask pantallaMenuObjetivos;
 
     [SerializeField] private LanternPickUp lanternPickUp;
     [SerializeField] private PickUpBatery bateryPickUp;
@@ -422,6 +421,8 @@ public class MainCharacter : MonoBehaviour
         {
             pantallaMenuDerrota.SetActive(true);
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

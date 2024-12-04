@@ -6,7 +6,7 @@ public class DisplayTask : MonoBehaviour
 {
     public CanvasGroup task;
     public CanvasGroup lifeBar;
-    public bool isActive;
+    public bool isActive = true;
 
     private void Start()
     {
@@ -17,17 +17,16 @@ public class DisplayTask : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            isActive = !isActive;
             if (isActive == true)
             {
                 ShowTask();
                 Time.timeScale = 0f; // Detener el tiempo
-                isActive = false;
             }
             else
             {
                 HideTask();
                 Time.timeScale = 1f; // Detener el tiempo
-                isActive = true;
             }
         }
     }

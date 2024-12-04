@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2925578859543077419}
   - component: {fileID: 7759581943926400502}
   m_Layer: 5
-  m_Name: BotonSalir
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -592,6 +592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pantallaMenuDerrota: {fileID: 6136600566713560557}
+  restartButton: {fileID: 2118454001764692579}
+  mainMenuButton: {fileID: 1363134315680256832}
+  quitButton: {fileID: 7759581943926400502}
 --- !u!1 &3735376415608067887
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +608,7 @@ GameObject:
   - component: {fileID: 6708448095547388480}
   - component: {fileID: 2118454001764692579}
   m_Layer: 5
-  m_Name: BotonVuelveAIntentar_2
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,7 +1165,7 @@ GameObject:
   - component: {fileID: 2818634023072003423}
   - component: {fileID: 1363134315680256832}
   m_Layer: 5
-  m_Name: BotonMenuPrincipal
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

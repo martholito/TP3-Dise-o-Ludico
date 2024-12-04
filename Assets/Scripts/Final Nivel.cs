@@ -22,6 +22,8 @@ public class FinalNivel : MonoBehaviour
 
     public void PasarNivel()
     {
+        GameManager.instance.SetCurrentHealth(100);
+        GameManager.instance.SetCurrentBatery(100);
         SceneManager.LoadScene("MenuInicio");
     }
 }
