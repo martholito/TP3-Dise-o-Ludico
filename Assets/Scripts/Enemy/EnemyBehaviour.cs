@@ -16,6 +16,7 @@ public enum EnemyStates
     Pursuit = 2,
     Stay = 3,
     Dead = 4,
+    Confused = 5,
     LookAtPlayer
 }
 public class EnemyBehaviour : MonoBehaviour
@@ -27,10 +28,17 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private EnemyStates startingtState;
     [SerializeField] private MainCharacter player;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float moveRandomSpeed;
     [SerializeField] private float pursuitThreshold;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Animator characterAnimator;
     [SerializeField] private float damage;
+    [SerializeField] private Transform[] puntosMov;
+    [SerializeField] private float distminima;
+    private int siguientepaso =0;
+    private SpriteRenderer spriteRenderer;
+
+
 
 
     void Update()
@@ -53,6 +61,9 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case EnemyStates.LookAtPlayer:
                 LookRotationQuaternion();
+                break;
+            case EnemyStates.Confused:
+                RandomMovement();
                 break;
             default:
                 Stay();
@@ -119,6 +130,63 @@ public class EnemyBehaviour : MonoBehaviour
 
         transform.position += diff * (Time.deltaTime * movementSpeed);
     }
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();  
+    }
+
+    public void RandomMovement()
+    {
+        characterAnimator.SetBool("isRunning", true);
+
+        if (puntosMov == null || puntosMov.Length == 0) return;
+
+        Vector3 targetPosition = puntosMov[siguientepaso].position;
+        Vector3 direction = (targetPosition - transform.position).normalized;
+
+        
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+
+        
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveRandomSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, targetPosition) < distminima)
+        {
+            siguientepaso = (siguientepaso + 1) % puntosMov.Length;
+        }
+    }
+   
+
+
+
+    //    if (puntosMov == null || puntosMov.Length == 0) return;
+
+    //    transform.position = Vector3.MoveTowards(transform.position, puntosMov[siguientepaso].position, moveRandomSpeed * Time.deltaTime);
+
+    //    if (Vector3.Distance(transform.position, puntosMov[siguientepaso].position) < distminima)
+    //    {
+    //        siguientepaso = (siguientepaso + 1) % puntosMov.Length;
+    //    }
+    //}
+    //public void WalkRandom()
+    //{
+
+    //    characterAnimator.SetBool("isRunning", true);
+    //    transform.position = Vector3.MoveTowards(transform.position, puntosMov[siguientepaso].position, movementSpeed * Time.deltaTime);
+
+    //    if (Vector3.Distance(transform.position, puntosMov[siguientepaso].position) < distminima)
+    //    {
+    //        siguientepaso += 1;
+    //        if (siguientepaso >= puntosMov.Length)
+    //        {
+    //            siguientepaso = 0;
+    //        }
+    //    }
+    //}
 
     private void StartRuning()
     {
