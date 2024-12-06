@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4967746807006993702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.196
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_Name
+      value: Whiteclown N Hallin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a11cdec7802a7e24f90d0165604228e0, type: 2}
+    - target: {fileID: 5866666021909216657, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d093af4d66c4c2c438539205fc4eff80,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8966892829639609839}
+  m_SourcePrefab: {fileID: 100100000, guid: d093af4d66c4c2c438539205fc4eff80, type: 3}
+--- !u!95 &1556678458400776375 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: d093af4d66c4c2c438539205fc4eff80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4967746807006993702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5202100361174098039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d093af4d66c4c2c438539205fc4eff80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4967746807006993702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8966892829639609839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202100361174098039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8315fb3cbcacece41abc95a9b365b28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRange: 5
+  attackRange: 4
+  speed: 1
+  rotationSpeed: 5
+  timeWaiting: 2
+  timeWatching: 3
+  waypoints:
+  - {x: -14, y: 0.5, z: -19}
+  - {x: -1.02, y: 0.5, z: -19}
+  - {x: -1.02, y: 0.5, z: -30.1}
+  - {x: -14.33, y: 0.5, z: -30.1}
+  myAnimator: {fileID: 1556678458400776375}
+  particleEffect: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
+    type: 3}
