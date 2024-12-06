@@ -108,7 +108,7 @@ public class EnemyBehaviour : MonoBehaviour
     //El enemigo esta quieto
     private void Stay()
     {
-        Idle();
+        characterAnimator.SetBool("isRunning", false);
     }
 
     //El enemigo gira hacia el jugador y lo persigue
@@ -132,7 +132,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();  
+        //spriteRenderer = GetComponent<SpriteRenderer>();  
     }
 
     public void RandomMovement()
@@ -192,10 +192,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         characterAnimator.SetBool("isRunning", true);
     }
-    private void Idle()
-    {
-        characterAnimator.SetBool("isRunning", false);
-    }
+    //private void Idle()
+    //{
+    //    characterAnimator.SetBool("isRunning", false);
+    //}
 
     private void Atacking()
     {

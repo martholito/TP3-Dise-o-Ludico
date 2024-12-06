@@ -136,10 +136,13 @@ MonoBehaviour:
   startingtState: 5
   player: {fileID: 0}
   movementSpeed: 3
-  pursuitThreshold: 13
+  moveRandomSpeed: 0
+  pursuitThreshold: 10
   rotationSpeed: 10
   characterAnimator: {fileID: 5329146084741027108}
   damage: 25
+  puntosMov: []
+  distminima: 0
 --- !u!1001 &9119862458235396970
 PrefabInstance:
   m_ObjectHideFlags: 0
