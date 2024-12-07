@@ -241,7 +241,7 @@ public class MainCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pantallaMenuPausa.SetActive(true);
-
+            Camera.main.GetComponent<CameraOrbit>().enabled = false;
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;  

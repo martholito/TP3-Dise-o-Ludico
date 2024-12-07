@@ -29,7 +29,7 @@ public class MenuPausa : MonoBehaviour
         Debug.Log("Continuando juego desde el boton");
         ObjetoMenuPausa.SetActive(false);
         pausa = false;
-
+        Camera.main.GetComponent<CameraOrbit>().enabled = true;
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

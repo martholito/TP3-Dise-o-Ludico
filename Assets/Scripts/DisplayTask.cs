@@ -22,11 +22,13 @@ public class DisplayTask : MonoBehaviour
             {
                 ShowTask();
                 Time.timeScale = 0f; // Detener el tiempo
+                Camera.main.GetComponent<CameraOrbit>().enabled = false;
             }
             else
             {
                 HideTask();
                 Time.timeScale = 1f; // Detener el tiempo
+                Camera.main.GetComponent<CameraOrbit>().enabled = true;
             }
         }
     }
