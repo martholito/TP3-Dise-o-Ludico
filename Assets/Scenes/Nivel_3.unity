@@ -148,10 +148,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6722301
+  m_Radius: 4.37
   m_Height: 17.290867
   m_Direction: 1
-  m_Center: {x: -0.32423872, y: -8.08754, z: 0.8479911}
+  m_Center: {x: -0.61, y: -14.51, z: -1.04}
 --- !u!1 &151839055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,10 +2824,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6722301
+  m_Radius: 4.37
   m_Height: 17.290867
   m_Direction: 1
-  m_Center: {x: -0.32423872, y: -8.08754, z: 0.8479911}
+  m_Center: {x: -0.61, y: -14.51, z: -1.04}
 --- !u!82 &2030145213 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4883026171273504680, guid: bf332ea30e85fce4cb87c09fc4939b73,
