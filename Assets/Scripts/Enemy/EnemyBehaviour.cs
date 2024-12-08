@@ -15,8 +15,8 @@ public enum EstadosEnemy
     Pursuit = 1,
     Atacking = 2,
     StayPatrol = 3,
-    StayRandom = 4,
-    LookAtPlayer
+    StayRandom 
+    
 }
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float escapeThreshold;
     [SerializeField] private float damage;
 
-    [SerializeField] Transform[] CheckPoints;
+    [SerializeField] Transform[] checkPoints;
     [SerializeField] private float distanciaCheckPoints;
     private float distanciaCheckPoints2;
     private int indice;
@@ -57,6 +57,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float cronometro;
     private Quaternion angulo;
     private float grado;
+
 
     private void Awake()
     {
@@ -89,9 +90,6 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case EstadosEnemy.StayRandom:
                 StayRandom();
-                break;
-            case EstadosEnemy.LookAtPlayer:
-                LookRotationPlayer();
                 break;
             default:
                 break;
@@ -128,6 +126,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             ChangeState(EstadosEnemy.Pursuit);
         }
+        LookRotationPlayer();
         characterAnimator.SetBool("isAtacking", false);
         characterAnimator.SetBool("isRunning", false);
     }
@@ -187,9 +186,9 @@ public class EnemyBehaviour : MonoBehaviour
 
         LookRotationCheckPoint();
         transform.position += transform.forward * (Time.deltaTime * walkSpeed);
-        if ((CheckPoints[indice].position - transform.position).sqrMagnitude < distanciaCheckPoints2)
+        if ((checkPoints[indice].position - transform.position).sqrMagnitude < distanciaCheckPoints2)
         {
-            indice = (indice + 1) % CheckPoints.Length;
+            indice = (indice + 1) % checkPoints.Length;
         }
     }
 
@@ -244,7 +243,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void LookRotationCheckPoint()
     {
-        var newRotation = Quaternion.LookRotation(CheckPoints[indice].position - transform.position);
+        var newRotation = Quaternion.LookRotation(checkPoints[indice].position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
     }
 
@@ -258,16 +257,14 @@ public class EnemyBehaviour : MonoBehaviour
         Handles.DrawWireDisc(transform.position, Vector3.up, pursuitThreshold);
         Handles.color = Color.green;
         Handles.DrawWireDisc(transform.position, Vector3.up, escapeThreshold);
-
     }
 
 #endif
 
 }
 
-//public void RandomMovement()
+//public void StayPatrol()
 //{
-//    characterAnimator.SetBool("isRunning", true);
 
 //    if (puntosMov == null || puntosMov.Length == 0) return;
 
