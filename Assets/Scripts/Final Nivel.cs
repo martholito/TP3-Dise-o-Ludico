@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FinalNivel : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other) 
     {
         FrontBed(other.gameObject);
     }

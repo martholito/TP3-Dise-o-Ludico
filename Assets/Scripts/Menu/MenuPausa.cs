@@ -10,8 +10,9 @@ using static UnityEditor.ShaderData;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private Button continueButton, restartButton, mainMenuButton, quitButton;
-    public GameObject ObjetoMenuPausa;
+    [SerializeField] private Button continueButton, restartButton, controlsButton, mainMenuButton, quitButton;
+    [SerializeField] private GameObject ObjetoMenuPausa;
+    [SerializeField] private GameObject pantallaControles;
     public bool pausa;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class MenuPausa : MonoBehaviour
     {
         continueButton.onClick.AddListener(OnContinueButtonPressed);
         restartButton.onClick.AddListener(OnRestartButtonPressed);
+        controlsButton.onClick.AddListener(OnControlsButtonPressed);
         mainMenuButton.onClick.AddListener(OnMainMenuButtonPressed);
         quitButton.onClick.AddListener(OnQuitButtonPressed);
     }
@@ -34,6 +36,12 @@ public class MenuPausa : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         ResetEventSystem();
+    }
+
+    public void OnControlsButtonPressed()
+    {
+        Debug.Log("Controls");
+        pantallaControles.SetActive(true);
     }
 
     private void ResetEventSystem()

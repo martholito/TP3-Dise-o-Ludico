@@ -27,7 +27,7 @@ public class DisplayTask : MonoBehaviour
             else
             {
                 HideTask();
-                Time.timeScale = 1f; // Detener el tiempo
+                Time.timeScale = 1f; // Restaurar el tiempo
                 Camera.main.GetComponent<CameraOrbit>().enabled = true;
             }
         }

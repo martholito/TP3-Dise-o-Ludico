@@ -22,7 +22,6 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] private LayerMask pickUpCollisionLayer;
     [SerializeField] private GameObject pressFIndicator;
 
-
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCheckDistance;
