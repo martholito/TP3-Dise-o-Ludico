@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.ShaderData;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -87,6 +86,7 @@ public class MenuPausa : MonoBehaviour
     private void OnQuitButtonPressed()
     {
         Debug.Log("Quit");
+        Application.Quit();
 
 #if UNITY_EDITOR 
         EditorApplication.ExitPlaymode(); //Solo editor, no funciona en la build!!!

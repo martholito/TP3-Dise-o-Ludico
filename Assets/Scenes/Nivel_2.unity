@@ -9411,6 +9411,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21979293043121442, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21979293043121442, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 39657849229544214, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295107360889990998, guid: 71b55fc7273e0c149ba46afae3e40e79,
+        type: 3}
+      propertyPath: m_text
+      value: 'Puedes encontrar las baterias en dinstintos lugares del subte
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 7981732348746996550, guid: 71b55fc7273e0c149ba46afae3e40e79,
         type: 3}
       propertyPath: m_Name
@@ -16896,8 +16928,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
         type: 3}
+      propertyPath: runSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
+        type: 3}
       propertyPath: jumpForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
         type: 3}

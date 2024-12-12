@@ -2158,6 +2158,16 @@ PrefabInstance:
       objectReference: {fileID: 2030145214}
     - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
         type: 3}
+      propertyPath: runSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714233134623537464, guid: bf332ea30e85fce4cb87c09fc4939b73,
+        type: 3}
       propertyPath: barraDeEstres
       value: 
       objectReference: {fileID: 386543812}
@@ -2965,6 +2975,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 39657849229544214, guid: d66de286a465e5c44b9ad1368651b21c,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899853940609220879, guid: d66de286a465e5c44b9ad1368651b21c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7981732348746996550, guid: d66de286a465e5c44b9ad1368651b21c,
         type: 3}
       propertyPath: m_Name
@@ -3071,7 +3091,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1680264807636859229, guid: d66de286a465e5c44b9ad1368651b21c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d66de286a465e5c44b9ad1368651b21c, type: 3}

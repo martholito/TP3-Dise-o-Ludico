@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Unity.VisualScripting.Member;
-using static UnityEditor.ShaderData;
 
 public class MainCharacter : MonoBehaviour
 {
